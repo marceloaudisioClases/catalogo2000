@@ -15,7 +15,7 @@
             <i class="bi bi-gear-fill"></i> Administración
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Usuarios</a></li>
+                <li><a class="dropdown-item" href="<?php echo site_url("usuarios"); ?>">Usuarios</a></li>
                 <li><a class="dropdown-item" href="#">Roles</a></li>
             </ul>
             </li>
