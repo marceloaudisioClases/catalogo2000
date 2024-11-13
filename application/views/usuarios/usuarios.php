@@ -17,9 +17,32 @@
 
                 <div class="card">
                     <div class="card-body">
-                    <?php foreach($categorias as $c){ ?>   
-                  <a href="#" class="list-group-item list-group-item-action"><?php echo $c["usuario"]; ?></a>
-               <?php } ?>
+                    <?php foreach($usuarios as $c){ ?>
+                      <table class="table table-bordered border-black">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Rol</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row"><?php echo $c["usuario_id"]; ?></th>
+                            <td><?php echo $c["usuario"]; ?></td>
+                            <td><?php echo $c["apellido"]; ?></td>
+                            <td><?php echo $c["nombre"]; ?></td>
+                            <td><?php echo $c["email"]; ?></td>
+                            <td><?php echo $c["estado"]; ?></td>
+                            <td><?php echo $c["rol_id"]; ?></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                   <?php } ?>
                     </div>
                 </div>
             </div>
