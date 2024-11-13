@@ -17,32 +17,32 @@
 
                 <div class="card">
                     <div class="card-body">
-                    <?php foreach($usuarios as $c){ ?>
-                      <table class="table table-bordered border-black">
+                    <table class="table table-bordered border-black">
                         <thead>
                           <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Usuario</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Rol</th>
+                            <th scope="col" class="text-center">ID</th>
+                            <th scope="col" class="text-center">Usuario</th>
+                            <th scope="col" class="text-center">Apellido</th>
+                            <th scope="col" class="text-center">Nombre</th>
+                            <th scope="col" class="text-center">Email</th>
+                            <th scope="col" class="text-center">Estado</th>
+                            <th scope="col" class="text-center">Rol</th>
                           </tr>
                         </thead>
+                    <?php foreach($usuarios as $c){ ?>
                         <tbody>
                           <tr>
-                            <th scope="row"><?php echo $c["usuario_id"]; ?></th>
-                            <td><?php echo $c["usuario"]; ?></td>
-                            <td><?php echo $c["apellido"]; ?></td>
-                            <td><?php echo $c["nombre"]; ?></td>
-                            <td><?php echo $c["email"]; ?></td>
-                            <td><?php echo $c["estado"]; ?></td>
-                            <td><?php echo $c["rol_id"]; ?></td>
+                            <th scope="row" class="col-md-1 text-center"><?php echo $c["usuario_id"]; ?></th>
+                            <td class="col-md-2 text-center"><?php echo $c["usuario"]; ?></td>
+                            <td class="col-md-2 text-center"><?php echo $c["apellido"]; ?></td>
+                            <td class="col-md-2 text-center"><?php echo $c["nombre"]; ?></td>
+                            <td class="col-md-3 text-center"><?php echo $c["email"]; ?></td>
+                            <td class="col-md-1 text-center"><?php echo $c["estado"]; ?></td>
+                            <td class="col-md-1 text-center"><?php echo $c["rol_id"]; ?></td>
                           </tr>
                         </tbody>
+                        <?php } ?>
                       </table>
-                   <?php } ?>
                     </div>
                 </div>
             </div>
