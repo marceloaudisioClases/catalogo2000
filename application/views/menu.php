@@ -17,6 +17,8 @@
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="<?php echo site_url("usuarios/index"); ?>">Usuarios</a></li>
                 <li><a class="dropdown-item" href="#">Roles</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="<?php echo site_url("productos"); ?>">Productos</a></li>
             </ul>
             </li>
         <?php } ?>
