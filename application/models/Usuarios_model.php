@@ -6,6 +6,8 @@ class Usuarios_model extends CI_Model {
         $this->db->set("nombre",$nombre);
         $this->db->set("apellido",$apellido);
         $this->db->set("usuario",$usuario);
+        $this->db->set("estado",$estado);
+        $this->db->set("rol_id",$rol_id);
         
         $this->db->insert("usuarios");
 
@@ -48,9 +50,16 @@ class Usuarios_model extends CI_Model {
         $this->db->join("roles","roles.rol_id=usuarios.rol_id");
         return $this->db->get("usuarios")->result_array();
     }
-    public function actualiza_estado($usuario_id,$estado){
-        $this->db->set("estado",$estado);
-        $this->db->where("usuario_id",$usuario_id);
-        $this->db->update("usuarios");       
+    public function actualizar_estado($id,$estado) {
+        $this->db->where('usuario_id', $id);
+        $this->db->update('usuarios', $estado);
+        return $this->db->affected_rows();
     }
+    public function actualizar_rol($id,$rol_id) {
+        $this->db->where('usuario_id', $id);
+        $this->db->update('usuarios', $rol_id);
+        return $this->db->affected_rows();
+    }
+    
 }
+

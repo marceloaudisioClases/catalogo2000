@@ -37,12 +37,27 @@
                             <td class="col-md-2 text-center"><?php echo $c["apellido"]; ?></td>
                             <td class="col-md-2 text-center"><?php echo $c["nombre"]; ?></td>
                             <td class="col-md-3 text-center"><?php echo $c["email"]; ?></td>
-                            <td class="col-md-1 text-center"><?php echo ($c["estado"]==1)?"Activo":"Inactivo"; ?></td>
-                            <td class="col-md-1 text-center"><?php echo $c["rol_nombre"]; ?></td>
+                            <form action="<?php echo site_url('usuarios/editar_estado/'.$c["usuario_id"]); ?>" method="post">
+                            <td class="col-md-1 text-center"><select name="estado" id="estado">
+                              <option value="1" <?php if($c["estado"] == 2){ echo "selected"; } ?>>Activo</option>
+                              <option value="0" <?php if($c["estado"] == 1){ echo "selected"; } ?>>Pendiente</option>
+                              <option value="2" <?php if($c["estado"] == 0){ echo "selected"; } ?>>Inactivo</option>
+                            </select>
+                            <button class="btn btn-primary" type="submit">Editar</button>
+                            </form>
+                          </td>
+                          <form action="<?php echo site_url('usuarios/editar_rol/'.$c["usuario_id"]); ?>" method="post">
+                          <td class="col-md-1 text-center"><select name="rol_id" id="rol_id">
+                              <option value="1" <?php if($c["rol_id"] == 1){ echo "selected"; } ?>>Administrador</option>
+                              <option value="2" <?php if($c["rol_id"] == 2){ echo "selected"; } ?>>Usuario</option>
+                              <option value="3" <?php if($c["rol_id"] == 3){ echo "selected"; } ?>>Cliente</option>
+                            </select><button class="btn btn-primary" type="submit">Editar</button>
+                            </form>
                           </tr>
                         </tbody>
                         <?php } ?>
                       </table>
+                     
                     </div>
                 </div>
             </div>
