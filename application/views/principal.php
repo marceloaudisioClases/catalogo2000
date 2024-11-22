@@ -14,6 +14,8 @@
             <div class="col">
               
                 <h1 class="display-1">Bienvenido</h1>
+                <br>
+                <h4>Total de productos: <?php echo $total_productos; ?></h4>
             </div>
         </div>
     </div>

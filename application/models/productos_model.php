@@ -22,5 +22,9 @@ class Productos_model extends CI_Model {
         $query = $this->db->get_where('productos', array('producto_id' => $id));
         return $query->row_array();
     }
+
+    public function contar(){
+        return $this->db->count_all("productos");
+    }
 }
 ?>
