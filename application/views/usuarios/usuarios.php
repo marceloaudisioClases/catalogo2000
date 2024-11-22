@@ -37,8 +37,8 @@
                             <td class="col-md-2 text-center"><?php echo $c["apellido"]; ?></td>
                             <td class="col-md-2 text-center"><?php echo $c["nombre"]; ?></td>
                             <td class="col-md-3 text-center"><?php echo $c["email"]; ?></td>
-                            <td class="col-md-1 text-center"><?php echo $c["estado"]; ?></td>
-                            <td class="col-md-1 text-center"><?php echo $c["rol_id"]; ?></td>
+                            <td class="col-md-1 text-center"><?php echo ($c["estado"]==1)?"Activo":"Inactivo"; ?></td>
+                            <td class="col-md-1 text-center"><?php echo $c["rol_nombre"]; ?></td>
                           </tr>
                         </tbody>
                         <?php } ?>
