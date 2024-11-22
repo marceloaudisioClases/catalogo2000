@@ -43,8 +43,9 @@ class Usuarios_model extends CI_Model {
         $this->db->update("usuarios");       
     }
     public function listar(){
-        $this->db->select("*");
+        $this->db->select("usuarios.*,roles.nombre AS rol_nombre");
         $this->db->order_by("apellido");
+        $this->db->join("roles","roles.rol_id=usuarios.rol_id");
         return $this->db->get("usuarios")->result_array();
     }
     public function actualiza_estado($usuario_id,$estado){
