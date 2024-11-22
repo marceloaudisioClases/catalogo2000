@@ -12,41 +12,52 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col">
-              
-                <h1>Edición de Producto:</h1>
+                <?php if($producto){ ?>
+                <h1>Edición de Producto: <?php echo str_pad($producto["producto_id"],5,"0",STR_PAD_LEFT);?></h1>
+                <?php
+                  switch($this->session->flashdata("MSJ")) {
+                    case "Actualizado":
+                      ?>
+                      <div class="alert alert-success">
+                          Producto Actualizado!
+                      </div>
+                      <?php
+                      break;
+                  }
+                ?>
                 <?php echo validation_errors() ?>
                 <div class="card">
                   <div class="card-body">
-                  <form method="post" action="<?php echo site_url("productos/alta"); ?>">
+                  <form method="post" action="<?php echo site_url("productos/editar/".$producto["producto_id"]); ?>">
                   <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre del producto" value="<?php echo set_value("nombre"); ?>">
+                        <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre del producto" value="<?php echo set_value("nombre",$producto["nombre"]); ?>">
                     </div>
                     <div class="mb-3">
                         <label for="descripcion" class="form-label">Descripción</label>
-                        <textarea class="form-control" name="descripcion" rows="3"><?php echo set_value("descripcion"); ?></textarea>
+                        <textarea class="form-control" name="descripcion" rows="3"><?php echo set_value("descripcion",$producto["descripcion"]); ?></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="categoria_id" class="form-label">Categoría</label>
                         <select class="form-select" name="categoria_id">
                             <option selected>Selecciona una categoría</option>
                             <?php foreach($categorias as $c){ ?>
-                              <option value="<?php echo $c["categoria_id"]; ?>"><?php echo $c["nombre"]; ?></option>
+                              <option value="<?php echo $c["categoria_id"]; ?>" <?php echo set_select("categoria_id",$c["categoria_id"],($c["categoria_id"]==$producto["categoria_id"])); ?>><?php echo $c["nombre"]; ?></option>
                             <?php } ?>
                             
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="stock_actual" class="form-label">Stock Actual</label>
-                        <input type="number" class="form-control" name="stock_actual" value="<?php echo set_value("stock_actual","0"); ?>">
+                        <input type="number" class="form-control" name="stock_actual" value="<?php echo set_value("stock_actual",$producto["stock_actual"]); ?>">
                     </div>
                     <div class="mb-3">
                         <label for="stock_min" class="form-label">Stock Mínimo</label>
-                        <input type="number" class="form-control" name="stock_min" value="<?php echo set_value("stock_min","0"); ?>">
+                        <input type="number" class="form-control" name="stock_min" value="<?php echo set_value("stock_min",$producto["stock_min"]); ?>">
                     </div>
                     <div class="mb-3">
                         <label for="costo" class="form-label">Costo</label>
-                        <input type="number" class="form-control" name="costo" value="<?php echo set_value("costo","0"); ?>">
+                        <input type="number" class="form-control" name="costo" value="<?php echo set_value("costo",intval($producto["costo"])); ?>">
                     </div>
             
                     
@@ -55,6 +66,12 @@
                 </form>
                   </div>
                 </div>
+                <?php }else{ ?>
+                <br>
+                <div class="alert alert-info">
+                    Articulo no existe!
+                </div>
+                <?php } ?>
             </div>
         </div>
     </div>

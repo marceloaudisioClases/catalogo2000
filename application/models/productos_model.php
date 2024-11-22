@@ -6,6 +6,12 @@ class Productos_model extends CI_Model {
         $this->db->insert('productos', $data);
         return $this->db->insert_id();
     }
+    // Actualizar un producto
+    public function actualizar($id,$data) {
+        $this->db->where('producto_id', $id);
+        $this->db->update('productos', $data);
+        return $this->db->affected_rows();
+    }
     // Obtener todos los productos
     public function listar() {
         $query = $this->db->get('productos');
@@ -13,7 +19,7 @@ class Productos_model extends CI_Model {
     }
     // Obtener un producto por ID
     public function obtener_por_id($id) {
-        $query = $this->db->get_where('productos', array('id' => $id));
+        $query = $this->db->get_where('productos', array('producto_id' => $id));
         return $query->row_array();
     }
 }
