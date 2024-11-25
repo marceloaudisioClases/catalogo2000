@@ -90,4 +90,3 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 defined('TIPO_REGISTRO')      OR define('TIPO_REGISTRO', 2); // 1:abierto,2:Pend Aprobacion,3:Cerrado
 defined('ROL_ADMIN')      OR define('ROL_ADMIN', 1); 
 defined('ROL_USER')      OR define('ROL_USER', 2); 
-defined('ROL_CLIENTE')      OR define('ROL_CLIENTE', 3); 
