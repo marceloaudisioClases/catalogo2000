@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Productos_model extends CI_Model {
+    var $categoria_id=false;
+    public function set_categoria($categoria_id=false){
+        $this->categoria_id=$categoria_id;
+    }
     // Insertar un nuevo producto
     public function nuevo($data) {
         $this->db->insert('productos', $data);
@@ -14,6 +18,9 @@ class Productos_model extends CI_Model {
     }
     // Obtener todos los productos
     public function listar() {
+        if($this->categoria_id){
+            $this->db->where('categoria_id', $this->categoria_id);
+        }
         $query = $this->db->get('productos');
         return $query->result_array();
     }
