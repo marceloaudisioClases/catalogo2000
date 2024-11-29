@@ -14,9 +14,14 @@
            <div class="col-2">
                 
                 <div class="list-group">
-                <a href="<?php echo site_url("catalogo"); ?>" class="list-group-item list-group-item-action <?php echo ($categoria_id==0)?"active":""; ?>">
+                <a href="<?php echo site_url("catalogo"); ?>" class="list-group-item list-group-item-action <?php echo ($categoria_id==0 and !isset($buscar))?"active":""; ?>">
                   <i class="bi bi-house-fill"></i> Inicio
                 </a>
+                <?php if(isset($buscar)){ ?>
+                  <a href="#" class="list-group-item list-group-item-action active">
+                    <i class="bi bi-search"></i> Busqueda
+                  </a>
+                <?php } ?>
                <?php foreach($categorias as $c){ ?>   
                   <a href="<?php echo site_url("catalogo/categoria/".$c["categoria_id"]); ?>" class="list-group-item list-group-item-action <?php echo ($categoria_id==$c["categoria_id"])?"active":""; ?>"><?php echo $c["icono"]; ?> <?php echo $c["nombre"]; ?></a>
                <?php } ?>
@@ -30,7 +35,11 @@
                     <?php echo $categoria_seleccionada["nombre"];?>
                   </h1>
                 <?php }else{ ?>
-                  <h1 class="display-3">Portada</h1>
+                  <?php if(isset($buscar)){ ?>
+                    <h1 class="display-3">Buscando: "<?php echo $buscar; ?>"</h1>
+                  <?php }else{ ?>
+                    <h1 class="display-3">Portada</h1>
+                  <?php } ?>
                 <?php } ?>
                 <br>
                 <?php if($productos){ ?>
@@ -38,7 +47,7 @@
                       <tbody>
                         <?php foreach($productos as $p){ ?>
                             <tr>
-                              <th scope="row" class="col-sm-1">
+                              <th scope="row" class="col-sm-2">
 
                                 
                                 <?php if(file_exists(FCPATH.DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR.$p["producto_id"].".png")){ ?>
@@ -60,9 +69,15 @@
                       </tbody>
                     </table>
                 <?php }else{ ?>
-                    <div class="alert alert-info">
-                        No hay productos en esta categoría
-                    </div>
+                    <?php if(isset($buscar)){ ?>
+                      <div class="alert alert-warning">
+                      No hay productos que coincidan con la busqueda
+                      </div>
+                    <?php }else{ ?>
+                      <div class="alert alert-info">
+                          No hay productos en esta categoría
+                      </div>
+                    <?php } ?>
                 <?php } ?>
             </div>
         </div>
