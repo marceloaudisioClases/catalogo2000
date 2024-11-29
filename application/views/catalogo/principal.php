@@ -36,7 +36,7 @@
                   </h1>
                 <?php }else{ ?>
                   <?php if(isset($buscar)){ ?>
-                    <h1 class="display-3">Buscando: "<?php echo $buscar; ?>"</h1>
+                    <h1 class="display-3"><i class="bi bi-search"></i> Buscando: "<?php echo $buscar; ?>"</h1>
                   <?php }else{ ?>
                     <h1 class="display-3">Portada</h1>
                   <?php } ?>
@@ -57,8 +57,12 @@
                                 <?php } ?>
                               </th>
                               <td>
-                                <?php echo str_pad($p["producto_id"],5,"0",STR_PAD_LEFT); ?> - 
+                                
+                                  <?php echo str_pad($p["producto_id"],5,"0",STR_PAD_LEFT); ?> - 
                                 <?php echo $p["nombre"]; ?>
+                                <br>                                
+                                
+                                  <a href="#" class="btn btn-sm btn-outline-primary align-self-end">+ Info</a>                                
                               </td>
                               <td class="text-end col-sm-2">
                                 <b>$<?php echo $p["costo"]; ?></b>
