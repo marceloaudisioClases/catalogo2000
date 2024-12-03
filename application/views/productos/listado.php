@@ -19,7 +19,33 @@
                   </span>
                   
                 </h1>
-                
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="col-sm-1">Código</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col" class="col-sm-2">Costo</th>
+                        <th scope="col" class="col-sm-1">&nbsp;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php foreach($productos as $p){ ?>
+                      <tr>
+                        <th scope="row">
+                          <?php echo str_pad($p["producto_id"],5,"0",STR_PAD_LEFT); ?>
+                        </th>
+                        <td><?php echo $p["nombre"]; ?></td>
+                        <td><?php echo $p["categoria_id"]; ?></td>
+                        <td class="text-end">$<?php echo $p["costo"]; ?></td>
+                        <td class="text-end">
+                          <a href="<?php echo site_url("productos/editar/".$p["producto_id"]); ?>" title="Editar" class="btn btn-primary btn-sm"><i class="bi bi-pencil-fill"></i></a>
+                        </td>
+                      </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+
             </div>
         </div>
     </div>

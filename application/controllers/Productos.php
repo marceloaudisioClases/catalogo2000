@@ -88,7 +88,7 @@ class Productos extends CI_Controller {
 
 	public function listar(){
 		$datos=array();
-
+		$datos["productos"]=$this->productos_model->listar();
 		$this->load->view("productos/listado",$datos);
 	}
 }
