@@ -9,6 +9,9 @@
         <li class="nav-item">
           <a class="nav-link active" href="<?php echo site_url("Principal/index"); ?>"><i class="bi bi-house-fill"></i> Inicio</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo site_url("catalogo"); ?>" target="_blank"><i class="bi bi-cart-fill"></i> Catálogo</a>
+        </li>
         <?php if($this->session->userdata("rol_id")==ROL_ADMIN){ ?>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
