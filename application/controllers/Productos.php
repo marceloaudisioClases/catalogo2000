@@ -12,7 +12,7 @@ class Productos extends CI_Controller {
 	}
 	public function index()
 	{
-		redirect("productos/alta");
+		redirect("productos/listar");
 	}
 
 	public function alta(){
@@ -84,5 +84,11 @@ class Productos extends CI_Controller {
 			$this->session->set_flashdata("MSJ","Actualizado");
 			redirect('productos/editar/'.$id);
 		}
+	}
+
+	public function listar(){
+		$datos=array();
+
+		$this->load->view("productos/listado",$datos);
 	}
 }
