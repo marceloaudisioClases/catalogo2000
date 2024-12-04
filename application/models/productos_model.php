@@ -9,6 +9,16 @@ class Productos_model extends CI_Model {
     public function set_buscar($buscar=false){
         $this->buscar=$buscar;
     }
+
+    var $campo_orden="productos.nombre";
+    var $campo_sentido="ASC";
+    public function set_campo_orden($campo_orden="productos.nombre"){
+        $this->campo_orden=$campo_orden;
+    }
+    public function set_campo_sentido($sentido="ASC"){
+        $this->sentido=$sentido;
+    }
+
     // Insertar un nuevo producto
     public function nuevo($data) {
         $this->db->insert('productos', $data);
@@ -22,12 +32,19 @@ class Productos_model extends CI_Model {
     }
     // Obtener todos los productos
     public function listar() {
+
+        $this->db->select("productos.*, categorias.nombre AS categoria_nombre");
         if($this->categoria_id){
-            $this->db->where('categoria_id', $this->categoria_id);
+            $this->db->where('productos.categoria_id', $this->categoria_id);
         }
         if($this->buscar){
-            $this->db->like('nombre', $this->buscar);
+            $this->db->like('productos.nombre', $this->buscar);
         }
+
+        $this->db->join("categorias","productos.categoria_id=categorias.categoria_id","inner");
+
+        $this->db->order_by($this->campo_orden,$this->campo_sentido);
+
         $query = $this->db->get('productos');
         return $query->result_array();
     }
