@@ -13,8 +13,13 @@
         <div class="row">
             <div class="col">
               
+<<<<<<< Updated upstream
                 <h1 class="display-1">Lista de usuarios <i class="bi bi-person-check"></i></h1>
 
+=======
+                <h1 class="display-1">Lista de usuarios:</h1>
+                  <br>
+>>>>>>> Stashed changes
                 <div class="card">
                     <div class="card-body">
                     <table class="table table-bordered border-black">
@@ -25,8 +30,7 @@
                             <th scope="col" class="text-center">Apellido</th>
                             <th scope="col" class="text-center">Nombre</th>
                             <th scope="col" class="text-center">Email</th>
-                            <th scope="col" class="text-center">Estado</th>
-                            <th scope="col" class="text-center">Rol</th>
+                            <th scope="col" class="text-center">Ult.Login</th>
                           </tr>
                         </thead>
                     <?php foreach($usuarios as $c){ ?>
@@ -37,8 +41,7 @@
                             <td class="col-md-2 text-center"><?php echo $c["apellido"]; ?></td>
                             <td class="col-md-2 text-center"><?php echo $c["nombre"]; ?></td>
                             <td class="col-md-3 text-center"><?php echo $c["email"]; ?></td>
-                            <td class="col-md-1 text-center"><?php echo ($c["estado"]==1)?"Activo":"Inactivo"; ?></td>
-                            <td class="col-md-1 text-center"><?php echo $c["rol_nombre"]; ?></td>
+                            <td class="col-md-3 text-center"><?php echo $c["ult_login"]; ?></td>
                           </tr>
                         </tbody>
                         <?php } ?>
