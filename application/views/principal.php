@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col">
               
-                <h1 class="display-1">Bienvenido</h1>
+                <h1 class="display-1">Bienvenido <i class="bi bi-emoji-laughing"></i></h1>
                 <br>
                 <h4>Total de productos: <?php echo $total_productos; ?></h4>
             </div>
