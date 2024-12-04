@@ -13,7 +13,9 @@ class Principal extends CI_Controller {
 	{
 		$datos=array();
 		$this->load->model("productos_model");
+		$this->load->model("categorias_model");
 		$datos["total_productos"]=$this->productos_model->contar();
+		$datos["total_categorias"]=$this->categorias_model->contar();
 		$this->load->view('principal',$datos);
 	}
 	public function micuenta()

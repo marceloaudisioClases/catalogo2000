@@ -14,4 +14,11 @@ class Categorias_model extends CI_Model {
         $this->db->limit(1);
         return $this->db->get("categorias")->row_array();       
     }
+    public function nuevo($data) {
+        $this->db->insert('categorias', $data);
+        return $this->db->insert_id();
+    }
+    public function contar(){
+        return $this->db->count_all("categorias");
+    }
 }

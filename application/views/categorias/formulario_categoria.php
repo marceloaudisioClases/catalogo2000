@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bienvenida de usuarios</title>
+    <title>Alta de categorias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">  
   </head>
@@ -13,10 +13,18 @@
         <div class="row">
             <div class="col">
               
-                <h1 class="display-1">Bienvenido</h1>
-                <br>
-                <h4>Total de productos: <?php echo $total_productos; ?></h4>
-                <h4>Total de categorias: <?php echo $total_categorias; ?></h4>
+                <h1>Alta de Categoria:</h1>
+                <div class="card">
+                  <div class="card-body">
+                  <form method="post" action="<?php echo site_url("categorias/alta"); ?>">
+                  <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre de la categoria">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+                  </div>
+                </div>
             </div>
         </div>
     </div>

@@ -85,4 +85,5 @@ class Productos extends CI_Controller {
 			redirect('productos/editar/'.$id);
 		}
 	}
+
 }
