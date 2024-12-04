@@ -87,6 +87,15 @@ class Productos extends CI_Controller {
 	}
 
 	public function listar(){
+		$partes=$this->uri->uri_to_assoc();
+		
+		$campos_permitidos=array("producto_id","nombre","costo");
+		if(isset($partes["orden"])){
+			if(in_array($partes["orden"],$campos_permitidos)){
+				$this->productos_model->set_campo_orden($partes["orden"]);
+			}
+		}
+
 		$datos=array();
 		$datos["productos"]=$this->productos_model->listar();
 		$this->load->view("productos/listado",$datos);

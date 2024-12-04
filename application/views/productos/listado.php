@@ -22,10 +22,16 @@
                 <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th scope="col" class="col-sm-1">Código</th>
-                        <th scope="col">Nombre</th>
+                        <th scope="col" class="col-sm-1">
+                          <a href="<?php echo site_url("productos/listar/orden/producto_id"); ?>">Código</a>
+                        </th>
+                        <th scope="col">
+                          <a href="<?php echo site_url("productos/listar/orden/nombre"); ?>">Nombre</a>
+                        </th>
                         <th scope="col">Categoría</th>
-                        <th scope="col" class="col-sm-2">Costo</th>
+                        <th scope="col" class="col-sm-2">
+                          <a href="<?php echo site_url("productos/listar/orden/costo"); ?>">Costo</a>
+                        </th>
                         <th scope="col" class="col-sm-1">&nbsp;</th>
                       </tr>
                     </thead>
@@ -36,7 +42,7 @@
                           <?php echo str_pad($p["producto_id"],5,"0",STR_PAD_LEFT); ?>
                         </th>
                         <td><?php echo $p["nombre"]; ?></td>
-                        <td><?php echo $p["categoria_id"]; ?></td>
+                        <td><?php echo $p["categoria_nombre"]; ?></td>
                         <td class="text-end">$<?php echo $p["costo"]; ?></td>
                         <td class="text-end">
                           <a href="<?php echo site_url("productos/editar/".$p["producto_id"]); ?>" title="Editar" class="btn btn-primary btn-sm"><i class="bi bi-pencil-fill"></i></a>
