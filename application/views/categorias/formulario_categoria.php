@@ -13,7 +13,20 @@
         <div class="row">
             <div class="col">
               
+
+
+
                 <h1>Alta de Categoria:</h1>
+                <?php 
+                if($this->session->flashdata("OP")){
+                    echo "<p>
+                    <div class='alert alert-info' role='alert'>
+                      Categoria Creada!
+                    </div>
+                    </p>";
+                } 
+                ?>
+
                 <div class="card">
                   <div class="card-body">
                   <form method="post" action="<?php echo site_url("categorias/alta"); ?>">

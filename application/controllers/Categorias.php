@@ -26,8 +26,10 @@ class Categorias extends CI_Controller {
 			$data = array(
 				'nombre' => set_value('nombre')
 			);
+
 			$id=$this->categorias_model->nuevo($data);
-			redirect('categorias/index');
+			$this->session->set_flashdata("OP","CATEGORIACREADA");
+			redirect('categorias/alta');
 		}
 
 	}
