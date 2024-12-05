@@ -13,13 +13,8 @@
         <div class="row">
             <div class="col">
               
-<<<<<<< Updated upstream
                 <h1 class="display-1">Lista de usuarios <i class="bi bi-person-check"></i></h1>
 
-=======
-                <h1 class="display-1">Lista de usuarios:</h1>
-                  <br>
->>>>>>> Stashed changes
                 <div class="card">
                     <div class="card-body">
                     <table class="table table-bordered border-black">

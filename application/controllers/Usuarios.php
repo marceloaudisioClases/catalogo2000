@@ -10,4 +10,5 @@ class Usuarios extends CI_Controller {
 		$usuarios["usuarios"]=$this->usuarios_model->listar();
 		$this->load->view('usuarios/usuarios',$usuarios);
     }
+
 }

@@ -7,4 +7,8 @@ class Usuario_model extends CI_Model {
         $this->db->set("usuario_id");
         return $this->db->get("usuarios")->result_array();
     }
+
+    public function contar(){
+        return $this->db->count_all("usuarios");
+    }
 }
