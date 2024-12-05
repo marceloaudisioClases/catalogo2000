@@ -15,7 +15,9 @@
               
                 <h1 class="display-1">Bienvenido <i class="bi bi-emoji-laughing"></i></h1>
                 <br>
-                <h4>Total de productos: <?php echo $total_productos; ?></h4>
+                <h4><i class="bi bi-archive-fill"></i>&nbsp;Total de productos: <?php echo $total_productos; ?></h4>
+                <br>
+                <h4><i class="bi bi-people-fill"></i>&nbsp;Total de usuarios: <?php echo $total_usuarios; ?></h4>
             </div>
         </div>
     </div>
