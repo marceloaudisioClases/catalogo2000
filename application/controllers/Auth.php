@@ -87,4 +87,21 @@ class Auth extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect("auth/login");
 	}
+
+	public function envio_test(){
+		$this->load->library('email'); //Cargar libreria
+        $this->email->initialize(); // Carga la config  
+
+        $this->email->from('marcelo@hilet.com', 'Curso de Programacion');
+        $this->email->to('marcelo@hilet.com');
+        $this->email->subject('Test de Envío');
+        $this->email->message('Esto es una Prueba, no me mandes al SPAM');
+
+        if ($this->email->send()) {
+            echo 'Email Enviado';
+        } else {
+            echo 'Falló el Envío';
+            echo $this->email->print_debugger();
+        }
+	}
 }
