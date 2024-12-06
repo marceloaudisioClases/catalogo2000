@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col">
               
-                <h1>Listado de Productos:
+                <h1>Listado de Productos:<i class="bi bi-box-seam-fill"></i>
                   <span class="float-end">
                       <a href="<?php echo site_url("productos/alta"); ?>" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Nuevo</a>
                   </span>

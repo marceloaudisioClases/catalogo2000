@@ -13,19 +13,28 @@
         <div class="row">
             <div class="col">
               
-                <h1 class="display-1">Lista de usuarios <i class="bi bi-person-check"></i></h1>
-
-                <div class="card">
-                    <div class="card-body">
-                    <table class="table table-bordered border-black">
+                <h1>Listado de Usuarios:<i class="bi bi-person-check"></i></h1>
+                    <table class="table table-bordered">
                         <thead>
                           <tr>
-                            <th scope="col" class="text-center">ID</th>
-                            <th scope="col" class="text-center">Usuario</th>
-                            <th scope="col" class="text-center">Apellido</th>
-                            <th scope="col" class="text-center">Nombre</th>
-                            <th scope="col" class="text-center">Email</th>
-                            <th scope="col" class="text-center">Ult.Login</th>
+                            <th scope="col" class="text-center">
+                            <a href="<?php echo site_url("usuarios/listar/orden/usuario_id"); ?>">ID</a>
+                            </th>
+                            <th scope="col" class="text-center">
+                            <a href="<?php echo site_url("usuarios/listar/orden/usuario"); ?>">Usuario</a>
+                            </th>
+                            <th scope="col" class="text-center">
+                            <a href="<?php echo site_url("usuarios/listar/orden/apellido"); ?>">Apellido</a>
+                            </th>
+                            <th scope="col" class="text-center">
+                            <a href="<?php echo site_url("usuarios/listar/orden/nombre"); ?>">Nombre</a>
+                            </th>
+                            <th scope="col" class="text-center">
+                            <a href="<?php echo site_url("usuarios/listar/orden/email"); ?>">Email</a>
+                            </th>
+                            <th scope="col" class="text-center">
+                            <a href="<?php echo site_url("usuarios/listar/orden/ult_login"); ?>">Ult.login</a>
+                            </th>
                           </tr>
                         </thead>
                     <?php foreach($usuarios as $c){ ?>
@@ -40,9 +49,7 @@
                           </tr>
                         </tbody>
                         <?php } ?>
-                      </table>
-                    </div>
-                </div>
+                      </table>                   
             </div>
         </div>
     </div>

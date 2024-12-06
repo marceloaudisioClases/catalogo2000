@@ -1,5 +1,6 @@
 <?php
 class Usuarios_model extends CI_Model {
+
     public function nuevo($email,$usuario,$password,$nombre,$apellido){
         $this->db->set("email",$email);
         $this->db->set("password",$password);
