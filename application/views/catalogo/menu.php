@@ -1,5 +1,5 @@
 
-<nav class="navbar bg-dark border-bottom border-body navbar-expand-lg " data-bs-theme="dark">
+<nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-black p-2 text-dark bg-opacity-10" data-bs-theme="secondary-subtle">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><i class="bi bi-magic"></i> App</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle"></i> <?php echo $this->session->userdata("apellido").", ".$this->session->userdata("nombre"); ?>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu bg-black p-2 text-dark bg-opacity-10">
             <li><a class="dropdown-item" href="<?php echo site_url("Principal/micuenta"); ?>"><i class="bi bi-briefcase-fill"></i> Mi Cuenta</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="<?php echo site_url("auth/logout"); ?>"><i class="bi bi-door-open-fill"></i> Salir</a></li>
