@@ -8,16 +8,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="<?php echo site_url("catalogo"); ?>"><i class="bi bi-house-fill"></i> Inicio</a>
-        </li>
-        
-      </ul>
-      <form class="d-flex" role="search" method="POST" action="<?php echo site_url("catalogo/buscar"); ?>">
+          <a class="nav-link active" href="<?php echo site_url("catalogo"); ?>"><i class="bi bi-house-fill"></i>Inicio</a>
+        </li>     
+      </ul>     
+      &nbsp;<form class="d-flex" role="search" method="POST" action="<?php echo site_url("catalogo/buscar"); ?>">
         <input class="form-control me-2" type="text" placeholder="Ej: modelo" aria-label="Search" name="buscar" value="<?php echo (isset($buscar)?$buscar:"");?>">
         <button class="btn btn-primary" type="submit">Buscar</button>
-      </form>
+      </form>  
+      
       <ul class="navbar-nav ms-auto">
-      <li class="nav-item dropdown">
+      <li class="nav-item">
+          <a class="nav-link active" href="<?php echo site_url("catalogo/compra") ?>"><i class="bi bi-bag-fill"></i>Mis Compras</a>
+        </li> 
+      <li class="nav-item dropdown">    
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle"></i> <?php echo $this->session->userdata("apellido").", ".$this->session->userdata("nombre"); ?>
           </a>
