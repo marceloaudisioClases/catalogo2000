@@ -56,4 +56,8 @@ class Catalogo extends CI_Controller {
 			redirect("catalogo");
 		}
 	}
+
+	public function compra(){
+		$this->load->view("catalogo/compras");
+	}
 }
