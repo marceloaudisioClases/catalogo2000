@@ -13,16 +13,15 @@
         <div class="row">
             <div class="col">
               
-                <h1 class="display-1">Roles de cada usuario:</h1>
-                <br>
+                <h1>Rol del Usuario:<i class="bi bi-person-lines-fill"></i></h1>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
                       <th scope="col" class="col-sm-1">Identificador</th>
                       <th scope="col" class="col-sm-1">Usuario</th>
                       <th scope="col" class="col-sm-1">Nombre</th>
-                      <th scope="col" class="col-sm-1">rol</th>
-                      <th scope="col" class="col-sm-1">estado</th>
+                      <th scope="col" class="col-sm-1">Rol</th>
+                      <th scope="col" class="col-sm-1">Estado</th>
                     </tr>
                   </thead>
                   <?php foreach($usuarios as $u){ ?>
