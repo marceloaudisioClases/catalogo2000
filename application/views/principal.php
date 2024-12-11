@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bienvenida de usuarios</title>
+    <title>Inicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">  
   </head>
@@ -15,9 +15,12 @@
               
                 <h1 class="display-1">Bienvenido <i class="bi bi-emoji-laughing"></i></h1>
                 <br>
-                <h4><i class="bi bi-archive-fill"></i>&nbsp;Total de productos: <?php echo $total_productos; ?></h4>
-                <br>
-                <h4><i class="bi bi-people-fill"></i>&nbsp;Total de usuarios: <?php echo $total_usuarios; ?></h4>
+                <div class="card col-md-3" style="display: block">
+                  <div class="card-body text-center col-offset-4" style="border: 2px solid black">
+                    <h4>Total de usuarios: <?php echo $total_usuarios; ?></h4>
+                    <h4>Total de productos: <?php echo $total_productos; ?></h4>
+                    <h4>Total de categorias: <?php echo $total_categorias; ?></h4>
+                  </div>
             </div>
         </div>
     </div>
