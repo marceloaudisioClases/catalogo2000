@@ -17,9 +17,9 @@
                 <br>
                 <div class="card col-md-3" style="display: block">
                   <div class="card-body text-center col-offset-4" style="border: 2px solid black">
-                    <h4>Total de usuarios: <?php echo $total_usuarios; ?></h4>
-                    <h4>Total de productos: <?php echo $total_productos; ?></h4>
-                    <h4>Total de categorias: <?php echo $total_categorias; ?></h4>
+                    <h4><i class="bi bi-people-fill"></i> Total de usuarios: <?php echo $total_usuarios; ?></h4>
+                    <h4><i class="bi bi-archive-fill"></i> Total de productos: <?php echo $total_productos; ?></h4>
+                    <h4><i class="bi bi-tag-fill"></i> Total de categorias:  <?php echo $total_categorias; ?></h4>
                   </div>
             </div>
         </div>
