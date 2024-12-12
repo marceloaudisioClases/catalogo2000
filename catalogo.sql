@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-12-2024 a las 20:01:32
+-- Tiempo de generación: 13-12-2024 a las 00:36:58
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 7.4.33
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `catalogo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `api_log`
+--
+
+CREATE TABLE `api_log` (
+  `api_log_id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `metodo` text NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `api_log`
+--
+
+INSERT INTO `api_log` (`api_log_id`, `usuario_id`, `metodo`, `fecha`) VALUES
+(2, 1, 'actualizar_precio', '2024-12-12 20:35:19');
 
 -- --------------------------------------------------------
 
@@ -67,7 +87,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`producto_id`, `nombre`, `descripcion`, `categoria_id`, `stock_actual`, `stock_min`, `costo`, `estado`) VALUES
-(1, 'S24', 'Samsung AI', 3, 10, 5, '2000000.00', 1),
+(1, 'S24', 'Samsung AI', 3, 10, 5, '9999999.00', 1),
 (2, 'iPhone 15', 'USB-C', 2, 10, 6, '4500000.00', 1),
 (3, 'iPhone 5 Space Gray', 'El mas Lindo', 2, 10, 0, '2.00', 1),
 (4, 'Tesla Explr 9', 'Elon Musk', 4, 10, 1, '699.00', 1);
@@ -108,20 +128,27 @@ CREATE TABLE `usuarios` (
   `creado` datetime NOT NULL DEFAULT current_timestamp(),
   `estado` tinyint(4) NOT NULL DEFAULT -1,
   `rol_id` tinyint(4) NOT NULL DEFAULT 2,
-  `ult_login` datetime DEFAULT NULL
+  `ult_login` datetime DEFAULT NULL,
+  `apikey` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`usuario_id`, `email`, `apellido`, `nombre`, `usuario`, `password`, `creado`, `estado`, `rol_id`, `ult_login`) VALUES
-(1, 'admin@hilet.com', 'admin', 'catalogo', 'admin', '1234', '2024-10-24 18:39:32', 1, 1, '2024-12-05 15:55:38'),
-(2, 'cliente@hilet.com', 'Cliente', 'compra', 'cliente', '1234', '2024-10-29 20:55:05', 1, 3, '2024-11-12 20:50:39');
+INSERT INTO `usuarios` (`usuario_id`, `email`, `apellido`, `nombre`, `usuario`, `password`, `creado`, `estado`, `rol_id`, `ult_login`, `apikey`) VALUES
+(1, 'admin@hilet.com', 'admin', 'catalogo', 'admin', '1234', '2024-10-24 18:39:32', 1, 1, '2024-12-12 20:13:11', '781e5e245d69b566979b86e28d23f2c7'),
+(2, 'cliente@hilet.com', 'Cliente', 'compra', 'cliente', '1234', '2024-10-29 20:55:05', 1, 3, '2024-11-12 20:50:39', '');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `api_log`
+--
+ALTER TABLE `api_log`
+  ADD PRIMARY KEY (`api_log_id`);
 
 --
 -- Indices de la tabla `categorias`
@@ -150,6 +177,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `api_log`
+--
+ALTER TABLE `api_log`
+  MODIFY `api_log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
