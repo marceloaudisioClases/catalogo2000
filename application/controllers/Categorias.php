@@ -8,6 +8,7 @@ class Categorias extends CI_Controller {
 			$this->session->set_flashdata("OP","PROHIBIDO");
 			redirect("auth/login");
 		}
+		$this->load->model("categorias_model");
 		$this->load->model("productos_model");
 	}
 	public function index()
@@ -32,5 +33,20 @@ class Categorias extends CI_Controller {
 			redirect('categorias/alta');
 		}
 
+	}
+
+	public function listar(){
+		$partes=$this->uri->uri_to_assoc();
+		
+		$campos_permitidos=array("categoria_id","nombre","estado");
+		if(isset($partes["orden"])){
+			if(in_array($partes["orden"],$campos_permitidos)){
+				$this->categorias_model->set_campo_orden($partes["orden"]);
+			}
+		}
+
+		$datos=array();
+		$datos["categorias"]=$this->categorias_model->listar();
+		$this->load->view("categorias/listado",$datos);
 	}
 }
