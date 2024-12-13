@@ -62,7 +62,7 @@
                                 <?php echo $p["nombre"]; ?>
                                 <br>                                
                                 
-                                  <a href="#" class="btn btn-sm btn-outline-primary align-self-end">+ Info</a>
+                                  <a href="<?php echo site_url("catalogo/ver/".$p["producto_id"]."/".$p["categoria_id"]); ?>" class="btn btn-sm btn-outline-primary align-self-end">+ Info</a>
                                   <a href="#" class="btn btn-sm btn-outline-primary align-self-end"><i class="bi bi-cart-plus"></i> Comprar</a>                               
                               </td>
                               <td class="text-end col-sm-2">
