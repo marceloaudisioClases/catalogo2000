@@ -13,10 +13,21 @@
         <div class="row">
             <div class="col">
               
-                <h1>Listado de Productos:<i class="bi bi-box-seam-fill"></i>
-                  <span class="float-end">
+                <h1><i class="bi bi-box-seam-fill"></i> Listado de Productos:
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Herramientas
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="<?php echo site_url("productos/exportar_csv"); ?>">Exportar CSV</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="float-end">
                       <a href="<?php echo site_url("productos/alta"); ?>" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Nuevo</a>
-                  </span>
+                  </div>
                   
                 </h1>
                 <table class="table table-bordered">
