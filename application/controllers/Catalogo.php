@@ -6,6 +6,7 @@ class Catalogo extends CI_Controller {
 		parent::__construct();
 		if(!$this->session->userdata('usuario_id')){
 			$this->session->set_flashdata("OP","PROHIBIDO");
+			$this->session->set_flashdata("VOLVER",current_url());
 			redirect("auth/login");
 		}
 		$this->load->model("categorias_model");

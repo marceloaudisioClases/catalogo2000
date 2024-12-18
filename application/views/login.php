@@ -60,6 +60,7 @@
                         <?php echo form_error("password",'<div class="form-text text-danger">','</div>'); ?>
                       </div>
                       <button type="submit" class="btn btn-primary">Ingresar</button>
+                      <input type="hidden" name="volver" valor="<?php echo $this->session->flashdata("VOLVER"); ?>">
                     </form>
                   </div>
                 </div>

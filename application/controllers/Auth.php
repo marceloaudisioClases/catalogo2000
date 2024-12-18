@@ -61,11 +61,16 @@ class Auth extends CI_Controller {
 					$this->session->set_userdata("rol_id",$usr["rol_id"]);
 					$this->usuarios_model->actualiza_login($u);
 					
-					if($usr["rol_id"]==ROL_ADMIN){
-						redirect("principal");
+					if($this->input->post("volver")){
+						redirect($this->input->post("volver"));
 					}else{
-						redirect("catalogo");
+						if($usr["rol_id"]==ROL_ADMIN){
+							redirect("principal");
+						}else{
+							redirect("catalogo");
+						}
 					}
+					
 
 				}else{
 					if($usr["estado"]==-1){
